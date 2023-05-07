@@ -13,9 +13,12 @@ phases:
   post_build:
     commands:
       - yarn build
+cache:
+  paths:
+    - 'node_modules/**/*'
 artifacts:
   files:
     - dist/**/*
     - node_modules/**/*
     - package.json
-    - Profile
+    - 'Profile'
