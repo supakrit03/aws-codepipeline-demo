@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install -g yarn
+  pre_build:
+    commands:
+      - echo Installing dependencies
+      - yarn install
+  post_build:
+    commands:
+      - yarn build
+artifacts:
+  files:
+    - dist/**/*
+    - node_modules/**/*
+    - package.json
+    - package-lock.json
